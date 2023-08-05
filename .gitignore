@@ -1,2 +1,5 @@
 # ignore files below
 Crawler/mydatabase_test.db
+Train/runs
+Train/model
+Train/huggingface_token.txt
