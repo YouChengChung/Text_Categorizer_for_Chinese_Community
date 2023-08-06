@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Text Classification Web App</title>
+    <!-- 在這裡加入你的CSS樣式表和其他meta資訊 -->
+</head>
+<body>
+    <header>
+        <h1>Text Classification Web App</h1>
+        <!-- 可以在這裡加入導航連結等 -->
+    </header>
+
+    <main>
+        <section>
+            <h2>Text Classification</h2>
+            <form method="post" action="">
+                {% csrf_token %}
+                <label for="text_input">請輸入文字：</label>
+                <input type="text" id="text_input" name="text_input" required>
+                <button type="submit">提交</button>
+            </form>
+        </section>
+
+        <section>
+            <h2>分類結果</h2>
+            {% if result %}
+                <p>輸入的文字屬於：{{ result }}</p>
+            {% endif %}
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 Text Classification Web App. All rights reserved.</p>
+    </footer>
+
+    <!-- 在這裡加入你的JavaScript腳本等 -->
+</body>
+</html>
