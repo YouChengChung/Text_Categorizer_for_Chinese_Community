@@ -4,6 +4,35 @@
     <meta charset="UTF-8">
     <title>Text Classification Web App</title>
     <!-- 在這裡加入你的CSS樣式表和其他meta資訊 -->
+    <style>
+        /* 在 CSS 中為 .intro 的元素添加樣式 */
+        .intro {
+            display: none; /* 預設隱藏 */
+            position: absolute;
+            /* bottom: 10px; */
+            left:50%;
+            transform: translateX(-50%);
+            padding: 10px;
+            background-color: #f1f1f1;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            text-align: center;
+            font-size: 14px;
+            width: 270px;
+        }
+
+        /* 使用 :hover 屬性設定滑鼠懸停時 .intro 的顯示 */
+        footer:hover .intro {
+            display: block; /* 滑鼠懸停時顯示 */   
+        }
+        main {
+            /* 保持其他設定不變 */
+            margin: 0 auto; /* 設定左右 margin 為 auto */
+            max-width: 350px; /* 設定 main 元素最大寬度為 600px，可自行調整 */
+            padding: 10px;
+            border: 1px solid #ccc;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -12,6 +41,7 @@
     </header>
 
     <main>
+        
         <section>
             <h2>Text Classification</h2>
             <form method="post" action="">
@@ -33,8 +63,13 @@
     </main>
 
     <footer>
-        <p>&copy; Text Classification Web App. All rights reserved.</p>
+        <p style="text-align: center;">&copy; Text Classification Web App. All rights reserved.</p>
+        <div class="intro">
+            <p>這個 Web App 是一個文本分類應用程式，可以辨識輸入的文字屬於以下哪個類別。</p>
+            <p>輸入文字後按下「提交」按鈕，即可查看分類結果。</p>
+            <p>類別: Baseball,BoyGirl,Lifeismoney,NBA,Stock</p>
+        </div>
     </footer>
-
+    
 </body>
 </html>
