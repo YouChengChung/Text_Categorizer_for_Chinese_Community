@@ -24,16 +24,17 @@
 
         <section>
             <h2>分類結果</h2>
-            {% if result %}
-                <p>輸入的文字屬於：{{ result }}</p>
+            {% if label %}
+                <p>輸入的文字為：{{ text_input }}</p>
+                <p>屬於：{{ label }}</p>
+                <p>Score: {{score}}</p>
             {% endif %}
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2023 Text Classification Web App. All rights reserved.</p>
+        <p>&copy; Text Classification Web App. All rights reserved.</p>
     </footer>
 
-    <!-- 在這裡加入你的JavaScript腳本等 -->
 </body>
 </html>

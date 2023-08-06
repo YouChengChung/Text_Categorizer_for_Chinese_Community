@@ -3,7 +3,7 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.contrib import messages #login時的error message
 from django.contrib.auth.decorators import login_required #用@控制必須login
-
+from .classification import classifier
 # Create your views here.
 
 # def home(request):
@@ -17,12 +17,18 @@ def classify_text(request):
 
         # 假設這裡是你的文本分類模型，返回文字類別
         # 這裡使用的是假想的分類函式 classify_text_function
-        # result = classify_text_function(text_input)
-        result = text_input
-
+        
+        result = classifier(text_input)
+        print(result)
+        label = result[0]['label']
+        # score = f"{result[0]['score']:.2f}"
+        score = f"{result[0]['score'] - result[0]['score'] % 0.01}"
+        print(score)
         # 將結果傳遞回模板中顯示
         context = {
-            'result':result
+            'text_input':text_input,
+            'label':label,
+            'score':score
         }
         return render(request, 'base/home.html', context)
 
