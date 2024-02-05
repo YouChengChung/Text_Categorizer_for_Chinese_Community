@@ -2,6 +2,7 @@ import sqlite3
 import mysql.connector
 from mysql.connector import Error
 from config import mysql_config
+import argparse
 
 def transfer_data(sqlite_db_path, mysql_config):
     sqlite_conn = sqlite3.connect(sqlite_db_path)
@@ -47,7 +48,10 @@ def transfer_data(sqlite_db_path, mysql_config):
 
 
 if __name__=='__main__':
-
-    sqlite_db_path = 'mydatabase_0205.db'
+    parser = argparse.ArgumentParser(description="crawlered file 'mydatabase_xxxx' insert into dateabase")
+    parser.add_argument('--file_name_dt',type=str,required=True,help='dt of the file name')
+    args = parser.parse_args()
+    dt = args.file_name_dt
+    sqlite_db_path = f'mydatabase_{dt}.db'
 
     transfer_data(sqlite_db_path, mysql_config)
