@@ -5,6 +5,8 @@ Crawler/dev/*
 Train/runs
 Train/model
 Train/huggingface_token.txt
+Train/config.py
+Train/__pycache__/*
 Crawler/config.py
 Text_classifier/base/__pycache__/*
 Text_classifier/Text_classifier/__pycache__/*
