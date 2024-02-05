@@ -6,3 +6,5 @@ Train/runs
 Train/model
 Train/huggingface_token.txt
 Crawler/config.py
+Text_classifier/base/__pycache__/*
+Text_classifier/Text_classifier/__pycache__/*
