@@ -57,14 +57,14 @@ class DatabaseHandler:
             self.conn.close()
 
 
-def crawler(dt):
+def crawler(dt,numberofpage):
     wb = openpyxl.Workbook()
     ws = wb.active
     ws.append(["看板名稱",'id',"推文數","文章作者","文章名稱"]) 
     
     for board_name in ('NBA',"Stock",'Boy-Girl','Baseball',"Lifeismoney"):
         url = 'https://www.ptt.cc/bbs/'+board_name+'/index.html'
-        for page in range(1,2): #30頁
+        for page in range(1,numberofpage): #30頁
             print(url)  #當前的url
             print(board_name,"版page",page)
             time.sleep(2)
@@ -115,7 +115,7 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='crawler')
     parser.add_argument('--page',type=int,required=True,default=2,help='number of page to crawl')
     args = parser.parse_args()
-    print(args.page)
+    numberofpage = args.page
 
     dt = Datetimeclass().today_format()
     database_name = f"mydatabase_{dt}.db"
@@ -135,5 +135,5 @@ if __name__ == '__main__':
     else:
         print("Error! cannot create the database connection.")
 
-    crawler(dt)
+    crawler(dt,numberofpage)
     handler.close_connection()
