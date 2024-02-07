@@ -2,6 +2,7 @@
 Crawler/mydatabase_test.db
 Crawler/mydatabase_*
 Crawler/dev/*
+Crawler/__pycache__/*
 Train/runs
 Train/model
 Train/huggingface_token.txt
